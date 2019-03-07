@@ -1,6 +1,6 @@
 const { RTMClient } = require('@slack/client');
 const TweetsService = require('./tweets/tweetsService');
-const token = 'xoxp-568680968291-568680970387-569646855860-253d02dae42f25a83692a5d20e26ae33'//process.env.SLACK_TOKEN;
+const token = process.env.SLACK_TOKEN;
 
 const GO = 'go';
 
