@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const TweetsService = require('./tweetsService');
 
-router.get('/', function (req, res) {
-    res.send({tweets: 'FictionFone'});
-})
+router.get('/', async (req, res) => {
+    const tweets = await TweetsService.getTweets();
+    res.send(tweets);
+});
 
 module.exports = router;

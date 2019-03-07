@@ -1,6 +1,6 @@
 const { RTMClient } = require('@slack/client');
-
-const token = 'xoxp-568680968291-568680970387-571047345558-49e6e8f30a36a4015ea776d5aa43f150'//process.env.SLACK_TOKEN;
+const TweetsService = require('./tweets/tweetsService');
+const token = 'xoxp-568680968291-568680970387-569646855860-253d02dae42f25a83692a5d20e26ae33'//process.env.SLACK_TOKEN;
 
 const GO = 'go';
 
@@ -8,9 +8,11 @@ const rtm = new RTMClient(token);
 rtm.start();
 
 console.log('RTM started');
-rtm.on('message', (message) => {
+rtm.on('message', async function (message) {
     if(doesMessageContainsKeyword(message.text, GO)) {
         console.log(message.text);
+        const tweets = [{'text': 'my first tweet'}];
+        await TweetsService.insertNewTweets(tweets);
     }
 });
 
