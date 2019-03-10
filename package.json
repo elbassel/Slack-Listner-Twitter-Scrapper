@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test-coverage": "NODE_ENV=test nyc  --reporter=lcov --reporter=text mocha",
-    "test": "mocha test/index.js && exit 0"
+    "test": "mocha test/index.js && exit 0",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@slack/client": "^4.10.0",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongoose": "^5.4.17",
-    "supertest": "^3.4.2"
+    "supertest": "^3.4.2",
+    "twit": "^2.2.11"
   },
   "devDependencies": {
     "chai": "^4.2.0",

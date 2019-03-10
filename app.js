@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 const TweetsService = require('./tweets/tweetsService');
 
@@ -6,7 +7,7 @@ module.exports = app;
 // Initialize Database
 require('./db/index');
 require('./SlackListner');
-
+app.use(cors());
 const tweets = require('./tweets/tweetsCtrl');
 app.use('/tweets', tweets);
 
@@ -22,9 +23,9 @@ app.get('/status', function(req, res){
 });
 
 
-
-app.listen(3000, () => {
-    console.log('Up and running on port 3000');
+const PORT_NUMBER = 3010;
+app.listen(PORT_NUMBER, () => {
+    console.log(`Up and running on port ${PORT_NUMBER}`);
 });
 
 module.exports = app;
