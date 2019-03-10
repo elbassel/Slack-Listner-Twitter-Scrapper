@@ -10,8 +10,6 @@ Using docker compose:<br/>
 	
 Run without docker:<br/>
 <ul>
-  
-
 	<li>In the config file, change database URL to be like the following but you Nodejs and MongoDB must be installed:
 	mongodb://localhost:27017/zappy</li>
   <li>Then run every app individually:</li>
